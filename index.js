@@ -1,6 +1,12 @@
 const express = require("express");
-
+// require("dotenv").config();
 const path = require('path');
+
+
+const authRoutes = require('./src/routes/authRoutes');
+const messageRoutes = require('./src/routes/messageRoutes');
+const articlesRoutes = require('./src/routes/articlesRoutes')
+
 
 const app = express();
 
@@ -11,13 +17,9 @@ app.use(express.static('public'));
 app.use(express.json())
 
 
-
-
-
-
-
-
-
+app.use('/', authRoutes);
+app.use('/', messageRoutes);
+app.use('/articles', articlesRoutes);
 
 
 
