@@ -2,7 +2,7 @@ const pool = require('../sql/connection')
 
 
 const list = (req, res) => {
-  pool.query("select * from quotes", (err, rows, fields) => {
+  pool.query("SELECT * FROM quotes ORDER BY id DESC LIMIT 1;", (err, rows, fields) => {
     res.json(rows);
   });
 };
