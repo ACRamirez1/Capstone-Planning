@@ -40,7 +40,8 @@ function setHeader(req, res, next) {
   // website we wish to allow content
   res.setHeader(
     "Access-Control-Allow-Origin", 
-    "http://localhost:3000"
+    "https://boisterous-unicorn-1350e0.netlify.app"
+    // "http://localhost:3000"
   );
 
   // Request methods you wish to allow
@@ -70,7 +71,7 @@ app.use(express.static("public"));
 
 app.use(cors());
 
-app.use(setHeader);
+// app.use(setHeader);
 app.use(express.json());
 app.use("/users", authenticateToken, usersRoutes);
 app.use('/quotes', authenticateToken, quotesRoutes);
